@@ -5,7 +5,7 @@ layout: 2017/sheet
 category: Databases
 ---
 
-### Browsing
+### Просмотр Баз/Таблиц/Полей/Процессов
 
 ```sql
 SHOW DATABASES;
@@ -40,7 +40,7 @@ SELECT ... FROM t1 LEFT JOIN t2 ON t1.id1 = t2.id2 WHERE condition;
 SELECT ... FROM t1 JOIN (t2 JOIN t3 ON ...) ON ...
 ```
 
-### Conditions
+### Состояния
 
 ```sql
 field1 = value1
@@ -54,8 +54,7 @@ condition1 AND condition2
 condition1 OR condition2
 ```
 
-### Create / Open / Delete Database
-
+### Создание/Удаление бд
 ```sql
 CREATE DATABASE DatabaseName;
 CREATE DATABASE DatabaseName CHARACTER SET utf8;
@@ -64,19 +63,19 @@ DROP DATABASE DatabaseName;
 ALTER DATABASE DatabaseName CHARACTER SET utf8;
 ```
 
-### Backup Database to SQL File
+### Создание бекапа
 
 ```bash
 mysqldump -u Username -p dbNameYouWant > databasename_backup.sql
 ```
 
-### Restore from backup SQL File
+### Восстановление с бекапа
 
 ```bash
 mysql - u Username -p dbNameYouWant < databasename_backup.sql;
 ```
 
-### Repair Tables After Unclean Shutdown
+### Восстановление бд 
 
 ```bash
 mysqlcheck --all-databases;
@@ -178,7 +177,7 @@ CREATE TABLE table (..., FOREIGN KEY (field1, field2) REFERENCES table2
 (t2_field1, t2_field2))
 ```
 
-### Users and Privileges
+### Пользователи и привилегии
 
 ```sql
 CREATE USER 'user'@'localhost';
@@ -245,7 +244,7 @@ Variants for TEXT&BLOB: `TINY` (max=255), `MEDIUM` (max=~16000), and `LONG` (max
 ENUM ('value1', 'value2', ...) -- (default NULL, or '' if NOT NULL)
 ```
 
-### Reset Root Password
+### Сброс root пароля
 
 ```bash
 $ /etc/init.d/mysql stop
